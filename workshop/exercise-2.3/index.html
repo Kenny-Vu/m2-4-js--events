@@ -2,7 +2,37 @@
 <html>
   <head>
     <title>Exercise 2.3</title>
-    <style></style>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        height: 100vh;
+        width: 100vw;
+      }
+      .main {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+      }
+      .button {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: tomato;
+        color: white;
+        font-size: 2rem;
+        border: none;
+        outline: none;
+      }
+      .alt-button {
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
     <div class="main" id="main"></div>

@@ -2,7 +2,32 @@
 <html>
   <head>
     <title>Exercise 2.1</title>
-    <style></style>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .main {
+        padding: 2rem;
+        text-align: center;
+        width: 70%;
+      }
+      .main > button {
+        height: 150px;
+        width: 150px;
+        margin: .5rem;
+        background-color: tomato;
+        font-size: 2rem;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <div class="main" id="main"></div>

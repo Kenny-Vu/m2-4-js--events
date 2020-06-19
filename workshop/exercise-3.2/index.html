@@ -2,10 +2,24 @@
 <html>
   <head>
     <title>Exercise 3.2</title>
-    <style></style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="main" id="main"></div>
+    <header>
+      <h1>Stopwatch</h1>
+    </header>
+    <div class="main" id="main">
+      <div class="container" id="minutes">0</div>
+      <div class="divider">:</div>
+      <div class="container" id="seconds">0</div>
+      <div class="divider">:</div>
+      <div class="container" id="centiseconds">0</div>
+    </div>
+    <div class="buttons-container">
+      <button id="start-btn">Start</button>
+      <button id="stop-btn">Stop</button>
+      <button id="reset-btn">Reset</button>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

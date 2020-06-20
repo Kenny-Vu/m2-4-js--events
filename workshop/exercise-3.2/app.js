@@ -17,8 +17,8 @@ function start(){
         let secondsText = (Math.floor(centiseconds/100))%60;
         let minutesText =  Math.floor((Math.floor(centiseconds/100))/60)
         centisecondsDiv.innerText = centisecondsText;
-        secondsDiv.innerText = secondsText;
-        minutesDiv.innerText = minutesText;
+        secondsDiv.innerText = secondsText + 's';
+        minutesDiv.innerText = minutesText + 'm';
         if (stopButtonClicked === true){
             clearInterval(stopWatch);
         }
@@ -31,8 +31,8 @@ function stop(){
 function reset(){
     stopButtonClicked = true;
     centisecondsDiv.innerText = 0;
-    secondsDiv.innerText = 0;
-    minutesDiv.innerText = 0;
+    secondsDiv.innerText = 0 + 's';
+    minutesDiv.innerText = 0 + 'm';
 }
 
 startButton.addEventListener('click',start);

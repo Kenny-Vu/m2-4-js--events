@@ -24,6 +24,8 @@ body {
   left: 150px;
   border-radius: 50%;
   background-color: black;
+  transition-duration: 1s;
+  opacity: 0;
 }
 .middle {
   position: relative;
@@ -38,6 +40,8 @@ body {
   border-top: solid 12px;
   position: absolute;
   transform: rotate(45deg) translateY(-40px) translateX(-10px);
+  transition-duration: 1s;
+  opacity: 0;
 }
 .right-arm {
   height: 220px;
@@ -45,6 +49,8 @@ body {
   border-top: solid 12px;
   position: absolute;
   transform: rotate(-45deg) translateY(160px) translateX(210px);
+  transition-duration: 1s;
+  opacity: 0;
 }
 .body {
   position: absolute;
@@ -52,6 +58,8 @@ body {
   width: 20px;
   background-color: black;
   transform: translateX(190px);
+  transition-duration: 1s;
+  opacity: 0;
 }
 .bottom {
   position: relative;
@@ -66,6 +74,8 @@ body {
   border-top: solid 16px;
   position: absolute;
   transform: rotate(-45deg) translateY(100px) translateX(65px);
+  transition-duration: 1s;
+  opacity: 0;
 }
 .right-leg {
   height: 220px;
@@ -73,6 +83,8 @@ body {
   border-top: solid 16px;
   position: absolute;
   transform: rotate(45deg) translateY(-55px) translateX(90px);
+  transition-duration: 1s;
+  opacity: 0;
 }
 .letter-box {
   position: absolute;

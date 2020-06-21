@@ -5,6 +5,8 @@ let leftArm = document.getElementById("left-arm");
 let rightArm = document.getElementById("right-arm");
 let leftLeg = document.getElementById("left-leg");
 let rightLeg = document.getElementById("right-leg");
+let bodyParts = [rightLeg, leftLeg, rightArm, leftArm, body, head];
+let lives = 6;
 let letterBox = document.getElementById("letter-box");
 let answer = document.getElementById("answer");
 let wordToGuess = [];
@@ -45,6 +47,7 @@ let randomWords = [
   "whale",
   "penguin",
   "government",
+  "bacon",
 ];
 //logic for generating letter buttons
 function generateLetters(arr) {
@@ -83,30 +86,52 @@ function letterClicked(event) {
   let letterElement = document.getElementById(letterId);
   letterElement.style.transform = "scale(0.5)";
   letterElement.style.opacity = 0;
-  compareLetter(letterId, alphabet, wordToGuess);
+  if (lives === 0) {
+    youLose();
+  } else {
+    compareLetter(letterId, alphabet, wordToGuess);
+    checkWin();
+  }
   console.log(wordToGuess);
   letterElement.removeEventListener("click", letterClicked);
 }
 
-//logic for retrieving user letter choice
+//logic for retrieving user letter choice && display letters on the right tiles when user chooses good letter
 function compareLetter(id, arr1, arr2) {
   let letterIndex = id.split("-")[1];
   let answerLetters = [...document.getElementsByClassName("tile")];
+  let choice = false;
   for (let i = 0; i < arr2.length; i++) {
     if (arr1[letterIndex] === arr2[i]) {
       answerLetters[i].style.opacity = 1;
-      arr2[i] = true;
+      choice = true;
+      arr2[i] = 1;
+      console.log("choice");
     }
   }
+  if (choice === false) {
+    let part = bodyParts[lives - 1];
+    part.style.opacity = 1;
+    lives--;
+  }
+}
+//function to display losing message
+function youLose() {
+  alert("You lose!");
 }
 
-//function for removing body parts when user chooses wrong letter
+//logic to determine if player won
 
-//function to display letters on the right tiles when user chooses good letter
-
-//function to display losing message
-
-//function to display winning message
+function checkWin() {
+  let win = function (arr) {
+    return arr.every(function (element) {
+      return element === 1;
+    });
+  };
+  if (win(wordToGuess) === true) {
+    alert("You win!");
+  }
+}
 
 generateLetters(alphabet);
 choosenWord(randomWords);

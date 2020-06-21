@@ -10,6 +10,7 @@ body {
   justify-content: center;
   font-family: "Poppins";
 }
+
 .main {
   height: 80vh;
   width: 80vw;
@@ -114,7 +115,6 @@ body {
   transform: scale(1.1);
   box-shadow: 0 0 10px red;
 }
-
 .answer {
   position: absolute;
   height: 20vh;
@@ -135,4 +135,57 @@ body {
 .answer div span {
   opacity: 0;
   transition-duration: 1s;
+}
+/* hide game before pressing start button */
+.main,
+.answer {
+  opacity: 0;
+}
+
+/* message Box */
+.message-box {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+}
+.title {
+  position: relative;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black;
+}
+.start-restart {
+  height: 100px;
+  width: 150px;
+  background-color: #34b334;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  margin: 1rem;
+}
+.start-restart:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+.start-restart::before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border: yellow solid transparent;
+}
+.start-restart:hover::before {
+  height: 100%;
+  width: 100%;
+  border: solid;
+  transition: width 0.2s linear;
 }
